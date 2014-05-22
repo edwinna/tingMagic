@@ -1,97 +1,114 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=640" />
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta content="telephone=no" name="format-detection" />
+        <style type="text/css">
+         html,body,div,p,h2,ul,li,a,img,h3{padding:0;margin:0;}
+         body{color:#fff;background:#1E1E1E;}
+         ul{list-style:none;}
+         a{display:block;}
+         body,html{height:100%;}
+         .page-sidebar{position:fixed;overflow:hidden;top:0;left:0;bottom:0;width:80%;display:block;margin:0 auto;}
+         .sidebar-wrap{margin:0 auto;background:#1A1A1A;}
+         .sidebar-wrap .bread{margin-left:50px;line-height:30px;color:#585858;text-transform:uppercase;}
+         .sidebar-shortcut{margin:0 auto;background:#1E1E1E;}
+         .shortcut-items{display:-webkit-box;height:50px;border-bottom:1px solid #2A2A2A;}
+         .shortcut-items li{-webkit-box-flex:1;height:50px;}
+         .shortcut-items li a{display:block;width:50px;height:50px;padding:15px;-webkit-box-sizing:border-box;}
+         .shortcut-items li img{width:25px;height:25px;}
+         .sidebar-logo{background:#202225;padding:20px 0 20px 0;border-bottom:1px solid #2A2A2A;}
+         .sidebar-logo .logo{width:100%;height:83px;background:url(images/logo.png)no-repeat;background-size:contain;}
+         .nav-item-list li{display:-webkit-box;height:55px;border-bottom:1px solid #1E2023;background:#292B2A;}
+         .nav-item-list li .item-icon{width:55px;padding:15px 0 15px 30px;}
+         .nav-item-list li .item-icon img{width:25px;height:25px;vertical-align:middle;}
+         .nav-item-list li .item-name{line-height:55px;color:#BDBEBE;}
+         .page-content{display:block;-webkit-transform:translate3d(80%,0,0);-webkit-transition:all .4s linear;z-index:10;background:#fff;}
+         .page-content .content-header{display:-webkit-box;position:fixed;background:#1A1A1A;height:49px;width:100%;}
+           .page-content .deploy-icon{-webkit-box-flex:1;max-width:60px;background-image:url(images/deploy-nav.png);background-size:18px 12px;background-repeat:no-repeat;background-position: 16px 18px;height:50px;height:50px;opacity:.8;}
+          .page-content.active{-webkit-transform:translate3d(0,0,0);-webkit-transition:all .4s linear;}
+          .page-content .content-header h3{display:inline-block;color:#fff;line-height:50px;}
+       </style>
+    </head>
+    <body>
+        <div class="photoV">
+        	<div class="page-sidebar">
+        		<div class="sidebar-wrap">
+        			<div class="sidebar-shortcut">
+        				<ul class="shortcut-items">
+        					<li class="shortcut-item"><a><img src="images/phone.png" alt=""></a></li>
+        					<li class="shortcut-item"><a><img src="images/facebook.png" alt=""></a></li>
+        					<li class="shortcut-item"><a><img src="images/twitter.png" alt=""></a></li>
+        					<li class="shortcut-item"><a><img src="images/search.png" alt=""></a></li>
+        					<li class="shortcut-item"><a><img src="images/close.png" alt=""></a></li>
+        				</ul>
+        			</div>
+        			<div class="sidebar-logo"><div class="logo"></div></div>
+        			<div class="sidebar-breadcrumb bread">Navigation</div>
+        			<div class="nav-menu">
+                        <ul class="nav-item-list">
+                        	<li class="nav-item">
+                        		<div class="item-icon"><img src="images/home.png"></div>
+                        		<div class="item-name">Homepage</div>
+                        		<div class="item-expand"><a class="status-icon"><em></em></a></div>
+                        	</li>
+                        	<li class="nav-item">
+                        		<div class="item-icon"><img src="images/cog2.png"></div>
+                        		<div class="item-name">Features</div>
+                        		<div class="item-expand"></div>
+                        	</li>
+                        	<li class="nav-item">
+                        		<div class="item-icon"><img src="images/image2.png"></div>
+                        		<div class="item-name">Gallery</div>
+                        		<div class="item-expand"></div>
+                        	</li>
+                        	<li class="nav-item">
+                        		<div class="item-icon"><img src="images/home.png"></div>
+                        		<div class="item-name">Contact</div>
+                        		<div class="item-expand"></div>
+                        	</li>
+                        </ul>
+        			</div>
+        			<div class="sidebar-about bread">About me</div>
+        			<div class="nav-menu">
+        				<div class="nav-item-list">
+        					<li class="nav-item">
+                        		<div class="item-icon"><img src="images/home.png"></div>
+                        		<div class="item-name">Homepage</div>
+                        		<div class="item-expand"><a class="status-icon"><em></em></a></div>
+                        	</li>
+                        	<li class="nav-item">
+                        		<div class="item-icon"><img src="images/cog2.png"></div>
+                        		<div class="item-name">Features</div>
+                        		<div class="item-expand"></div>
+                        	</li>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+        	<div class="page-content">
+        		<div class="content-header">
+        			<a class="deploy-icon"></a>
+        			<h3>tingting's house</h3>
+        		</div>
+        		<div class="content">
 
-    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
-    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
-
-    <script type="text/javascript" src="javascripts/modernizr.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $('#main_content').headsmart()
-      })
-    </script>
-    <title>Edwinna by edwinna</title>
-  </head>
-
-  <body>
-    <a id="forkme_banner" href="https://github.com/edwinna">View on GitHub</a>
-    <div class="shell">
-
-      <header>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <h1>Edwinna</h1>
-            <h2></h2>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-      </header>
-
-      <div id="no-downloads">
-        <span class="inner">
-        </span>
-      </div>
-
-
-      <span class="banner-fix"></span>
-
-
-      <section id="main_content">
-        <h3>
-<a name="welcome-to-github-pages-ed" class="anchor" href="#welcome-to-github-pages-ed"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages ed.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-
-      <footer>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <p>Projects by <a href="https://github.com/edwinna">edwinna</a> can be found on <a href="https://github.com/edwinna">GitHub</a></p>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
-        <span class="octocat"></span>
-      </footer>
-
-    </div>
-
-    
-  </body>
+        		</div>
+        	</div>
+        </div>
+        <script type="text/javascript" src="http://script.suning.cn/javascript/mobileweb/jquery.min.js"></script>
+        <script type="text/javascript">
+          $(function(){
+          	   var sHeight=$("body").height();
+          	   var $pageContent= $(".page-content");
+               $pageContent.css({"min-height":sHeight});
+               $(".deploy-icon").on("click",function(){
+               	  $pageContent.toggleClass("active");
+               });
+          });
+        </script>
+    </body>
 </html>
