@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta content="telephone=no" name="format-detection" />
+        <style type="text/css">
+             body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td,section,article,aside,header,footer,nav,dialog,figure,hgroup{margin:0;padding:0;}
+             ul{list-style:none;}
+             body{font-size:12px;}
+            .flex-container{display:-webkit-flex;-webkit-flex-flow:row wrap;-webkit-flex-direction:row;justify-content:space-around;-webkit-flex-wrap:wrap;-webkit-align-content:flex-start;-webkit-align-items:flex-start;margin:20px;}
+            .item{position:relative;width:300px;height:300px;margin:10px;}
+            .item img{width:300px;height:300px;}
+            .item .tip{position:absolute;top:50%;left:0;width:100px;height:50px;background:rgba(0,0,0,.7);color:#fff;line-height:50px;text-align:left;}
+            .flipped-horizontal-bottom{transform:rotateY(360deg);}
+            .flipped-horizontal-top{transform:rotateY(-360deg);}
+            .flipped-vertical-top{transform:rotateX(360deg);}
+            .flipped-vertical-bottom{transform:rotateX(-360deg);}
+            .nav-container{margin:0 auto;text-align:center;}
+            .nav-container a{display:inline-block;width:16px;height:16px;border-radius:16px;background:rgba(0,0,0,.1);}
+            .nav-container a.selected{background:rgba(0,0,0,.3);}
+            @media all and (max-width: 320px){
+                .item{width:120px;height:120px;}
+                .item img{width:120px;height:120px;}
+                .item .tip{width:70px;height:20px;line-height:20px;}
+            }
+        </style>
+    </head>
+    <body>
+        <div class="gl-container">
+        	<ul class="flex-container">
+        		<li class="item"><span class="tip">生如夏花</span><img src="images/1.jpg"></li>
+        		<li class="item"><span class="tip">时光静好</span><img src="images/2.jpg"></li>
+        		<li class="item"><span class="tip">1912</span><img src="images/3.jpg"></li>
+        		<li class="item"><span class="tip">神的孩子</span><img src="images/4.jpg"></li>
+        		<li class="item"><span class="tip">五月的天</span><img src="images/5.jpg"></li>
+        		<li class="item"><span class="tip">快乐2012</span><img src="images/6.jpg"></li>
+        	</ul>
+        </div>
+        <ul class="nav-container">
+        	<a href="#1" data-page="1"></a>
+        	<a href="#1" data-page="2"></a>
+        	<a href="#1" data-page="3"></a>
+        	<a href="#1" data-page="4"></a>
+        	<a href="#1" data-page="5"></a>
+        </ul>
+    </body>
+    <script type="text/javascript" src="http://script.suning.cn/javascript/mobileweb/jquery.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+      	    var itemlist = $(".flex-container").children();
+      	    var capcity = 6;
+      	    var itemContainer = $(".flex-container");
+      	    var navigation = $(".nav-container a");
+      	    var rotations =['flipped-vertical-bottom','flipped-vertical-top','flipped-horizontal-left','flipped-horizontal-right'];
+      	    for(var i=0;i<capcity;i++){
+      	    	var itemImg = itemlist.eq(i);
+      	    	var itemSrc = itemImg.attr("src");
+      	    	var itemAlt = itemImg.attr("alt");
+      	    	var item = '<div style="background:url('+itemSrc+')"><span>'+itemAlt+'</span></div>';
+      	    	itemContainer.append(item);
+      	    }
+      	    navigation.on("click", function(e){
+      	    	e.preventDefault();
+      	    	navigation.removeClass("selected");
+      	    	$(this).addClass("selected");
+      	    	page = $(this).attr("data-page");
+      	    	
+
+      	    })
+
+        });
+    </script>
+</html>
