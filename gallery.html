@@ -10,17 +10,26 @@
              body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td,section,article,aside,header,footer,nav,dialog,figure,hgroup{margin:0;padding:0;}
              ul{list-style:none;}
              body{font-size:12px;}
-            .flex-container{display:-webkit-flex;-webkit-flex-flow:row wrap;-webkit-flex-direction:row;justify-content:space-around;-webkit-flex-wrap:wrap;-webkit-align-content:flex-start;-webkit-align-items:flex-start;margin:20px;}
+           /* .flex-container{display:-webkit-flex;-webkit-flex-flow:row wrap;-webkit-flex-direction:row;justify-content:space-around;-webkit-flex-wrap:wrap;-webkit-align-content:flex-start;-webkit-align-items:flex-start;margin:20px;}*/
+            .flex-container{display:none;}
             .item{position:relative;width:300px;height:300px;margin:10px;}
             .item img{width:300px;height:300px;}
-            .item .tip{position:absolute;top:50%;left:0;width:100px;height:50px;background:rgba(0,0,0,.7);color:#fff;line-height:50px;text-align:left;}
+            .item span{position:absolute;top:50%;left:0;width:100px;height:50px;background:rgba(0,0,0,.7);color:#fff;line-height:50px;text-align:left;}
             .flipped-horizontal-bottom{transform:rotateY(360deg);}
             .flipped-horizontal-top{transform:rotateY(-360deg);}
             .flipped-vertical-top{transform:rotateX(360deg);}
             .flipped-vertical-bottom{transform:rotateX(-360deg);}
             .nav-container{margin:0 auto;text-align:center;}
             .nav-container a{display:inline-block;width:16px;height:16px;border-radius:16px;background:rgba(0,0,0,.1);}
-            .nav-container a.selected{background:rgba(0,0,0,.3);}
+            .nav-container a.selected{background:rgba(0,0,0,.6);}
+            .photolist{margin:20px;}
+            .photolist div{position:relative;display:inline-block;width:300px;height:200px;}
+            .photolist div span{position:absolute;top:50%;left:0;width:100px;height:50px;background:rgba(0,0,0,.6);color:#fff;}
+            .animated{-webkit-transition:all .5s linear;}
+            .flipped-vertical-bottom{-webkit-transform: rotateY(360deg);}
+            .flipped-vertical-top{-webkit-transform: rotateY(-360deg);}
+            .flipped-horizontal-left{-webkit-transform: rotateX(360deg);}
+            .flipped-horizontal-right{-webkit-transform: rotateX(-360deg);}
             @media all and (max-width: 320px){
                 .item{width:120px;height:120px;}
                 .item img{width:120px;height:120px;}
@@ -29,16 +38,37 @@
         </style>
     </head>
     <body>
-        <div class="gl-container">
+          <div class="photolist"></div>
         	<ul class="flex-container">
-        		<li class="item"><span class="tip">生如夏花</span><img src="images/1.jpg"></li>
-        		<li class="item"><span class="tip">时光静好</span><img src="images/2.jpg"></li>
-        		<li class="item"><span class="tip">1912</span><img src="images/3.jpg"></li>
-        		<li class="item"><span class="tip">神的孩子</span><img src="images/4.jpg"></li>
-        		<li class="item"><span class="tip">五月的天</span><img src="images/5.jpg"></li>
-        		<li class="item"><span class="tip">快乐2012</span><img src="images/6.jpg"></li>
+        		<li class="item"><img src="images/1.jpg" alt="pt1"></li>
+        		<li class="item"><img src="images/2.jpg" alt="pt2"></li>
+        		<li class="item"><img src="images/3.jpg" alt="pt3"></li>
+        		<li class="item"><img src="images/4.jpg" alt="pt4"></li>
+        		<li class="item"><img src="images/5.jpg" alt="pt5"></li>
+        		<li class="item"><img src="images/6.jpg" alt="pt6"></li>
+                <li class="item"><img src="images/3.jpg" alt="pt7"></li>
+                <li class="item"><img src="images/2.jpg" alt="pt8"></li>
+                <li class="item"><img src="images/3.jpg" alt="pt9"></li>
+                <li class="item"><img src="images/1.jpg" alt="pt10"></li>
+                <li class="item"><img src="images/3.jpg" alt="pt11"></li>
+                <li class="item"><img src="images/4.jpg" alt="pt12"></li>
+                <li class="item"><img src="images/4.jpg" alt="pt13"></li>
+                <li class="item"><img src="images/5.jpg" alt="pt14"></li>
+                <li class="item"><img src="images/2.jpg" alt="pt15"></li>
+                <li class="item"><img src="images/1.jpg" alt="pt16"></li>
+                <li class="item"><img src="images/4.jpg" alt="pt12"></li>
+                <li class="item"><img src="images/4.jpg" alt="pt13"></li>
+                <li class="item"><img src="images/5.jpg" alt="pt14"></li>
+                <li class="item"><img src="images/2.jpg" alt="pt15"></li>
+                <li class="item"><img src="images/1.jpg" alt="pt16"></li>
+                <li class="item"><img src="images/4.jpg" alt="pt17"></li>
+                <li class="item"><img src="images/4.jpg" alt="pt18"></li>
+                <li class="item"><img src="images/5.jpg" alt="pt19"></li>
+                <li class="item"><img src="images/2.jpg" alt="pt20"></li>
+                <li class="item"><img src="images/1.jpg" alt="pt21"></li>
+                <li class="item"><img src="images/1.jpg" alt="pt22"></li>
+                <li class="item"><img src="images/4.jpg" alt="pt23"></li>
         	</ul>
-        </div>
         <ul class="nav-container">
         	<a href="#1" data-page="1"></a>
         	<a href="#1" data-page="2"></a>
@@ -46,17 +76,16 @@
         	<a href="#1" data-page="4"></a>
         	<a href="#1" data-page="5"></a>
         </ul>
-    </body>
-    <script type="text/javascript" src="http://script.suning.cn/javascript/mobileweb/jquery.min.js"></script>
+     <script type="text/javascript" src="http://script.suning.cn/javascript/mobileweb/jquery.min.js"></script>
     <script type="text/javascript">
-        (function(){
-      	    var itemlist = $(".flex-container").children();
+        $(function(){
+      	    var itemlist = $(".flex-container");
       	    var capcity = 6;
-      	    var itemContainer = $(".flex-container");
+      	    var itemContainer = $(".photolist");
       	    var navigation = $(".nav-container a");
       	    var rotations =['flipped-vertical-bottom','flipped-vertical-top','flipped-horizontal-left','flipped-horizontal-right'];
       	    for(var i=0;i<capcity;i++){
-      	    	var itemImg = itemlist.eq(i);
+      	    	var itemImg = $(".flex-container").children('li:eq('+i+')').children("img");
       	    	var itemSrc = itemImg.attr("src");
       	    	var itemAlt = itemImg.attr("alt");
       	    	var item = '<div style="background:url('+itemSrc+')"><span>'+itemAlt+'</span></div>';
@@ -67,10 +96,29 @@
       	    	navigation.removeClass("selected");
       	    	$(this).addClass("selected");
       	    	page = $(this).attr("data-page");
-      	    	
-
-      	    })
-
+                for(var i = 0; i < capcity; i++){
+                    var item = itemContainer.children("div:eq(" + i + ")");
+                    console.log(item);
+                    var random  = Math.floor( Math.random() * ( 3 - 0 + 1 ) );
+                    var animation  = rotations[random];
+                    item.addClass('animated ' + animation);
+                    window.setTimeout(function(index){
+                        return function(){
+                            var curNum = (page == 1) ? index : ((page -1 ) *  capcity + index);
+                            var curImg = itemlist.children('li:eq(' + curNum +')').children("img");
+                            var curSrc = curImg.attr("src");
+                            var curAlt = curImg.attr("alt");
+                            console.log(curAlt);
+                            item.css({"background":"url(" + curSrc + ")"});
+                            item.children("span").text(curAlt);
+                        }
+                    }(i), 500);
+                    item.on('transitionend webkitTransitionEnd MSTransitionEnd oTransitionEnd', function() { 
+                        $(this).removeClass();
+                    });
+                }
+      	    });
         });
-    </script>
+    </script>  
+    </body>
 </html>
