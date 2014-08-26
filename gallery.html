@@ -9,8 +9,12 @@
         <style type="text/css">
              body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td,section,article,aside,header,footer,nav,dialog,figure,hgroup{margin:0;padding:0;}
              ul{list-style:none;}
-             body{font-size:12px;}
+             body{font-size:12px;font-family:"Microsoft YaHei"}
            /* .flex-container{display:-webkit-flex;-webkit-flex-flow:row wrap;-webkit-flex-direction:row;justify-content:space-around;-webkit-flex-wrap:wrap;-webkit-align-content:flex-start;-webkit-align-items:flex-start;margin:20px;}*/
+            .photo-top{position:relative;margin:0 auto;width:100%;text-align:center;}
+            .photo-top .title{margin:0 auto;height:50px;line-height:50px;font-size:18px;}
+            .photo-top .red:before{position:absolute;top:70px;left:20%;content:"";width:27%;height:1px;background-color:#ccc;}
+            .photo-top .red:after{position:absolute;top:70px;right:20%;content:"";width:27%;height:1px;background-color:#ccc;}
             .flex-container{display:none;}
             .item{position:relative;width:300px;height:300px;margin:10px;}
             .item img{width:300px;height:300px;}
@@ -22,9 +26,12 @@
             .nav-container{margin:0 auto;text-align:center;}
             .nav-container a{display:inline-block;width:16px;height:16px;border-radius:16px;background:rgba(0,0,0,.1);}
             .nav-container a.selected{background:rgba(0,0,0,.6);}
-            .photolist{margin:20px;}
-            .photolist div{position:relative;display:inline-block;width:300px;height:200px;}
-            .photolist div span{position:absolute;top:50%;left:0;width:100px;height:50px;background:rgba(0,0,0,.6);color:#fff;}
+            .photolist{position:relative;margin:20px;}
+            .photolist div{position:relative;display:inline-block;margin:10px;width:280px;height:200px;-webkit-box-sizing:border-box;box-shadow:0 1px 4px rgba(0,0,0,0.4);}
+            /*.photolist div:before{-webkit-transform-origin:bottom left;-webkit-transform:rotote(2deg);}
+            .photolist div:after{-webkit-transform-origin:bottom left;-webkit-transform:rotote(4deg);}*/
+            .photolist div:before,.photolist div:after{position:absolute;border:10px solid #fff;left:0;content:"";border-radius:3px;width:100%;height:100%;-webkit-box-sizing:border-box;box-shadow:0 1px 4px rgba(0,0,0,.4);-webkit-transition:all .3 ease-out;}
+            .photolist div span{position:absolute;top:50%;left:10px;width:100px;height:40px;line-height:40px;background:rgba(0,0,0,.6);color:#fff;}
             .animated{-webkit-transition:all .5s linear;}
             .flipped-vertical-bottom{-webkit-transform: rotateY(360deg);}
             .flipped-vertical-top{-webkit-transform: rotateY(-360deg);}
@@ -38,36 +45,42 @@
         </style>
     </head>
     <body>
+        <header class="photo-top"> 
+            <div class="title">收录美好图片</div>
+            <div class="red"><img src="images/love.png" width="25" height="25"></div>
+        </header>
           <div class="photolist"></div>
         	<ul class="flex-container">
-        		<li class="item"><img src="images/1.jpg" alt="pt1"></li>
-        		<li class="item"><img src="images/2.jpg" alt="pt2"></li>
+        		<li class="item"><img src="images/1.jpg" alt="夏天的飞鸟"></li>
+        		<li class="item"><img src="images/2.jpg" alt="秋天的黄叶"></li>
         		<li class="item"><img src="images/3.jpg" alt="pt3"></li>
         		<li class="item"><img src="images/4.jpg" alt="pt4"></li>
         		<li class="item"><img src="images/5.jpg" alt="pt5"></li>
         		<li class="item"><img src="images/6.jpg" alt="pt6"></li>
-                <li class="item"><img src="images/3.jpg" alt="pt7"></li>
-                <li class="item"><img src="images/2.jpg" alt="pt8"></li>
-                <li class="item"><img src="images/3.jpg" alt="pt9"></li>
-                <li class="item"><img src="images/1.jpg" alt="pt10"></li>
-                <li class="item"><img src="images/3.jpg" alt="pt11"></li>
-                <li class="item"><img src="images/4.jpg" alt="pt12"></li>
-                <li class="item"><img src="images/4.jpg" alt="pt13"></li>
-                <li class="item"><img src="images/5.jpg" alt="pt14"></li>
-                <li class="item"><img src="images/2.jpg" alt="pt15"></li>
-                <li class="item"><img src="images/1.jpg" alt="pt16"></li>
-                <li class="item"><img src="images/4.jpg" alt="pt12"></li>
-                <li class="item"><img src="images/4.jpg" alt="pt13"></li>
-                <li class="item"><img src="images/5.jpg" alt="pt14"></li>
-                <li class="item"><img src="images/2.jpg" alt="pt15"></li>
-                <li class="item"><img src="images/1.jpg" alt="pt16"></li>
-                <li class="item"><img src="images/4.jpg" alt="pt17"></li>
-                <li class="item"><img src="images/4.jpg" alt="pt18"></li>
-                <li class="item"><img src="images/5.jpg" alt="pt19"></li>
-                <li class="item"><img src="images/2.jpg" alt="pt20"></li>
-                <li class="item"><img src="images/1.jpg" alt="pt21"></li>
-                <li class="item"><img src="images/1.jpg" alt="pt22"></li>
-                <li class="item"><img src="images/4.jpg" alt="pt23"></li>
+                <li class="item"><img src="images/7.jpg" alt="pt7"></li>
+                <li class="item"><img src="images/8.jpg" alt="pt8"></li>
+                <li class="item"><img src="images/9.jpg" alt="pt9"></li>
+                <li class="item"><img src="images/10.jpg" alt="pt10"></li>
+                <li class="item"><img src="images/11.jpg" alt="pt11"></li>
+                <li class="item"><img src="images/12.jpg" alt="pt12"></li>
+                <li class="item"><img src="images/13.jpg" alt="pt13"></li>
+                <li class="item"><img src="images/14.jpg" alt="pt14"></li>
+                <li class="item"><img src="images/15.jpg" alt="pt15"></li>
+                <li class="item"><img src="images/16.jpg" alt="pt16"></li>
+                <li class="item"><img src="images/17.jpg" alt="pt12"></li>
+                <li class="item"><img src="images/18.jpg" alt="pt13"></li>
+                <li class="item"><img src="images/19.jpg" alt="pt14"></li>
+                <li class="item"><img src="images/20.jpg" alt="pt15"></li>
+                <li class="item"><img src="images/21.jpg" alt="pt16"></li>
+                <li class="item"><img src="images/22.jpg" alt="pt17"></li>
+                <li class="item"><img src="images/23.jpg" alt="pt18"></li>
+                <li class="item"><img src="images/24.jpg" alt="pt19"></li>
+                <li class="item"><img src="images/25.jpg" alt="pt20"></li>
+                <li class="item"><img src="images/26.jpg" alt="pt21"></li>
+                <li class="item"><img src="images/27.jpg" alt="pt22"></li>
+                <li class="item"><img src="images/28.jpg" alt="pt23"></li>
+                <li class="item"><img src="images/29.jpg" alt="pt24"></li>
+                <li class="item"><img src="images/30.jpg" alt="pt25"></li>
         	</ul>
         <ul class="nav-container">
         	<a href="#1" data-page="1"></a>
@@ -84,8 +97,8 @@
       	    var itemContainer = $(".photolist");
       	    var navigation = $(".nav-container a");
       	    var rotations =['flipped-vertical-bottom','flipped-vertical-top','flipped-horizontal-left','flipped-horizontal-right'];
-      	    for(var i=0;i<capcity;i++){
-      	    	var itemImg = $(".flex-container").children('li:eq('+i+')').children("img");
+      	    for(var i = 0;i < capcity; i++){
+      	    	var itemImg = itemlist.children('li:eq('+i+')').children("img");
       	    	var itemSrc = itemImg.attr("src");
       	    	var itemAlt = itemImg.attr("alt");
       	    	var item = '<div style="background:url('+itemSrc+')"><span>'+itemAlt+'</span></div>';
@@ -98,21 +111,19 @@
       	    	page = $(this).attr("data-page");
                 for(var i = 0; i < capcity; i++){
                     var item = itemContainer.children("div:eq(" + i + ")");
-                    console.log(item);
                     var random  = Math.floor( Math.random() * ( 3 - 0 + 1 ) );
                     var animation  = rotations[random];
                     item.addClass('animated ' + animation);
-                    window.setTimeout(function(index){
-                        return function(){
+                        setTimeout(function(index){
                             var curNum = (page == 1) ? index : ((page -1 ) *  capcity + index);
+                            console.log(curNum);
                             var curImg = itemlist.children('li:eq(' + curNum +')').children("img");
                             var curSrc = curImg.attr("src");
                             var curAlt = curImg.attr("alt");
-                            console.log(curAlt);
+                            console.log(item);
                             item.css({"background":"url(" + curSrc + ")"});
-                            item.children("span").text(curAlt);
-                        }
-                    }(i), 500);
+                            item.find("span").text(curAlt);
+                        }(i),200);
                     item.on('transitionend webkitTransitionEnd MSTransitionEnd oTransitionEnd', function() { 
                         $(this).removeClass();
                     });

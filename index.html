@@ -12,25 +12,27 @@
          ul{list-style:none;}
          a{display:block;}
          body,html{height:100%;}
-         .page-sidebar{position:fixed;overflow:hidden;top:0;left:0;bottom:0;width:80%;display:block;margin:0 auto;}
-         .sidebar-wrap{margin:0 auto;background:#1A1A1A;}
-         .sidebar-wrap .bread{margin-left:50px;line-height:30px;color:#585858;text-transform:uppercase;}
-         .sidebar-shortcut{margin:0 auto;background:#1E1E1E;}
-         .shortcut-items{display:-webkit-box;height:50px;border-bottom:1px solid #2A2A2A;}
-         .shortcut-items li{-webkit-box-flex:1;height:50px;}
-         .shortcut-items li a{display:block;width:50px;height:50px;padding:15px;-webkit-box-sizing:border-box;}
-         .shortcut-items li img{width:25px;height:25px;}
-         .sidebar-logo{background:#202225;padding:20px 0 20px 0;border-bottom:1px solid #2A2A2A;}
-         .sidebar-logo .logo{width:100%;height:83px;background:url(images/logo.png)no-repeat;background-size:contain;}
-         .nav-item-list li{display:-webkit-box;height:55px;border-bottom:1px solid #1E2023;background:#292B2A;}
-         .nav-item-list li .item-icon{width:55px;padding:15px 0 15px 30px;}
-         .nav-item-list li .item-icon img{width:25px;height:25px;vertical-align:middle;}
-         .nav-item-list li .item-name{line-height:55px;color:#BDBEBE;}
-         .page-content{display:block;-webkit-transform:translate3d(80%,0,0);-webkit-transition:all .4s linear;z-index:10;background:#fff;}
-         .page-content .content-header{display:-webkit-box;position:fixed;background:#1A1A1A;height:49px;width:100%;}
-           .page-content .deploy-icon{-webkit-box-flex:1;max-width:60px;background-image:url(images/deploy-nav.png);background-size:18px 12px;background-repeat:no-repeat;background-position: 16px 18px;height:50px;height:50px;opacity:.8;}
-          .page-content.active{-webkit-transform:translate3d(0,0,0);-webkit-transition:all .4s linear;}
-          .page-content .content-header h3{display:inline-block;color:#fff;line-height:50px;}
+        .page-sidebar{position:fixed;overflow:hidden;top:0;left:0;bottom:0;width:80%;display:block;margin:0 auto;}
+        .sidebar-wrap{margin:0 auto;background:#1A1A1A;}
+        .sidebar-wrap .bread{margin-left:50px;line-height:30px;color:#585858;text-transform:uppercase;}
+        .sidebar-shortcut{margin:0 auto;background:#1E1E1E;}
+        .shortcut-items{display:-webkit-box;height:50px;border-bottom:1px solid #2A2A2A;}
+        .shortcut-items li{-webkit-box-flex:1;height:50px;}
+        .shortcut-items li a{display:block;width:50px;height:50px;padding:15px;-webkit-box-sizing:border-box;}
+        .shortcut-items li img{width:25px;height:25px;}
+        .sidebar-logo{background:#202225;padding:20px 0 20px 0;border-bottom:1px solid #2A2A2A;}
+        .sidebar-logo .logo{width:100%;height:83px;background:url(images/logo.png)no-repeat;background-size:contain;}
+        .nav-item-list li{display:-webkit-box;height:55px;border-bottom:1px solid #1E2023;background:#292B2A;}
+        .nav-item-list li .item-icon{width:55px;padding:15px 0 15px 30px;}
+        .nav-item-list li .item-icon img{width:25px;height:25px;vertical-align:middle;}
+        .nav-item-list li .item-name{line-height:55px;color:#BDBEBE;cursor:pointer;}
+        .page-content{display:block;-webkit-transform:translate3d(80%,0,0);-webkit-transition:all .4s linear;z-index:10;background:#fff;}
+        .page-content .content-header{display:-webkit-box;position:fixed;background:#1A1A1A;height:49px;width:100%;}
+        .page-content .deploy-icon{-webkit-box-flex:1;max-width:60px;background-image:url(images/deploy-nav.png);background-size:18px 12px;background-repeat:no-repeat;background-position: 16px 18px;height:50px;height:50px;opacity:.8;}
+        .page-content.active{-webkit-transform:translate3d(0,0,0);-webkit-transition:all .4s linear;}
+        .page-content .content-header h3{display:inline-block;color:#fff;line-height:50px;}
+        .iframe{overflow:scroll;overflow-y:hidden;border:none;}
+
        </style>
     </head>
     <body>
@@ -57,12 +59,12 @@
                         	</li>
                         	<li class="nav-item">
                         		<div class="item-icon"><img src="images/cog2.png"></div>
-                        		<div class="item-name">Features</div>
+                        		<div class="item-name blog">Blog</div>
                         		<div class="item-expand"></div>
                         	</li>
                         	<li class="nav-item">
                         		<div class="item-icon"><img src="images/image2.png"></div>
-                        		<div class="item-name">Gallery</div>
+                        		<div class="item-name gallery">Gallery</div>
                         		<div class="item-expand"></div>
                         	</li>
                         	<li class="nav-item">
@@ -95,20 +97,29 @@
         			<h3>tingting's house</h3>
         		</div>
         		<div class="content">
-
+                    <iframe src="" id="ifr" class="iframe"></iframe>
         		</div>
         	</div>
         </div>
         <script type="text/javascript" src="http://script.suning.cn/javascript/mobileweb/jquery.min.js"></script>
         <script type="text/javascript">
           $(function(){
-          	   var sHeight=$("body").height();
-          	   var $pageContent= $(".page-content");
-               $pageContent.css({"min-height":sHeight});
-               $(".deploy-icon").on("click",function(){
-               	  $pageContent.toggleClass("active");
-               });
-          });
+          	    var sHeight = $("body").height();
+                var sWidth = $("body").width();
+                console.log(sWidth);
+          	    var $pageContent= $(".page-content");
+                $pageContent.css({"min-height":sHeight});
+                $(".deploy-icon").on("click",function(){
+               	   $pageContent.toggleClass("active");
+                });
+                $(".gallery").on('click', function (){
+                    $pageContent.toggleClass("active");
+                    $("#ifr").css({"height":sHeight},{"width":sWidth});
+                    $("#ifr").width(sWidth);
+                    $("#ifr").attr("src","gallery.html");
+                })
+            });
+
         </script>
     </body>
 </html>
