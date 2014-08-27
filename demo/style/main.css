@@ -33,7 +33,6 @@ html{height:100%;font-family:"Microsoft YaHei";}
 .sn-html5-loading .blueball {left:13px;background:#2272C9;-webkit-animation:bounce-left 1.2s infinite;-webkit-animation-timing-function:linear;}
 
 /** author:12072542; **/
-.fix-bg{position:absolute;z-index:-5;left:0;top:0;height:100%;}
 .cp-wrap{position:relative;margin: 0 auto;width:100%;height:100%;overflow:hidden;}
 .cp-page-slide{position:absolute;display:none;top:0;left:0;width:100%;height:100%;z-index:-1;-webkit-transition:.5s;overflow:hidden;}
 .cp_sec01{background:url(images/01.jpg) no-repeat;background-size:100%;}
@@ -49,7 +48,7 @@ margin-left:-25px;background:url(images/up-arrow.png) no-repeat;background-size:
 .cp-wrap .current{z-index:0;}
 .cp-app-wrap{position:relative;overflow:scroll;margin:0 auto;height:100%;background:url(images/cp-bg.jpg) no-repeat top center;background-size:cover;color:#fff;}
 .cp-app-box{position:relative;margin:0 auto;min-width:300px;height:100%;color:#fff;}
-.cp-app-holder,.cp-app-state{margin:2% 0 4% 50%;width:280px;padding-bottom:5%;-webkit-transform:translateX(-50%);background:rgba(0,0,0,.25);}
+.cp-app-holder,.cp-app-state{margin:2% 0 4% 50%;height:75%;width:280px;padding-bottom:5%;-webkit-transform:translateX(-50%);background:rgba(0,0,0,.15);}
 .cp-app-holder{border:1px solid #DEE7E5;color:#fff;}
 .cp-form dd{display:-webkit-box;line-height:30px;margin:3px 0;}
 .cp-form dd>span{display:inline-block;min-width:55px;text-align:left;}
@@ -68,8 +67,8 @@ margin-left:-25px;background:url(images/up-arrow.png) no-repeat;background-size:
 .share-title{display:block;color:#fff;margin:12% 0 0 0;text-align:left;}
 .share-box a{display:inline-block;margin:3px;}
 .share_wx>img{display:block;margin:-2px 15px 0 0;}
-.cp-state-foot{position:relative;margin:20% 0 0 10px;text-align:left;}
-.cp-state-foot a{display:block;color:#C81F08;border-bottom:1px solid #C81F08;white-space:nowrap;font-size:12px;}
+.cp-state-foot{position:absolute;bottom:20px;margin-left:10px;text-align:left;}
+.cp-state-foot a{color:#C81F08;border-bottom:1px solid #C81F08;white-space:nowrap;font-size:12px;}
 .cp-state-foot a:before{position:absolute;display:block;content:"";width:5px;height:5px;background:#C81F08;}
 .cp-state-foot .cp-link-a:before{top:5px;left:-10px;}
 .cp-state-foot .cp-link-b:before{top:25px;left:-10px;}
