@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+  	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta content="telephone=no" name="format-detection" />
+
+    <title>苏宁酷派双棒T1免费试用</title>
+    <link rel="stylesheet" type="text/css" href="style/main.css">
+    </head>
+    <body>
+        <div class="cp-wrap">
+        	<section class="cp-page-slide cp_sec01 current"></section>
+        	<section class="cp-page-slide cp_sec02"></section>
+        	<section class="cp-page-slide cp_sec03"></section>
+        	<section class="cp-page-slide cp_sec04"></section>
+        	<section class="cp-page-slide cp_sec05"></section>
+            <section class="cp-page-slide cp_sec06">
+             <div class="cp-app-box">
+                <div class="cp-logo">
+                    <img src="images/logo.png" width="163" height="16">
+                    <p>5.5英寸大屏千元双待王</p>
+                </div>
+                <div class="cp-app-holder">
+                    <dl class="cp-form mt15 wscale">
+                        <dd><span>申请人</span><input type="text" name="name" onblur="check(this)" /> 
+                            <input type="radio" name="sex">先生
+                            <input type="radio" name="sex">女士
+                        </dd>
+                       <dd><span>手机号码</span><input name="tel" type="tel" maxlength="11" onblur="check(this)"/></dd>
+                       <dd><span>验证码</span><input type="text" name="code" onblur="check(this)"/></dd>
+                    </dl>
+                    <dl class="cp-app-info wscale">
+                        <dt>活动说明</dt>
+                        <dl> 1、申请截止时间为9月10日24:00 </dl>
+                        <dl> 2、系统随机抽取10名用户,9月12号前公布名单；</dl>
+                        <dl> 3、请关注 "苏宁易购通讯" 公共账号获取中奖名单；</dl>
+                        <dl> 4、试用用户即获得商品终身使用权,不收回。</dl>
+                        <dl> 5、请准确填写信息,信息错误或无效将被取消资格。</dl>
+                        <dl> 6、此活动最终解释权归苏宁易购官方所有。</dl>
+                    </dl>
+                    <div class="cp-app-btn mt15">
+                       <a href="#" >提交申请</a>
+                    </div>
+                </div>
+            </div>
+            </section>
+            <span class="up-arrow"></span>
+        </div>
+    <script type="text/javascript" src="script/zepto.min.js"></script>
+    <script type="text/javascript" src="script/cp.js"></script>
+    <script type="text/javascript" src="script/share.js"></script>
+    <script type="text/javascript">
+    $(function(){
+        $(".cp-app-btn").click(function () {
+            // $(".cp-wrap").css("background","#fff");
+            $(".cp-wrap").after("<a href=\"javascript:;\"><div class=\"sn-html5-loading vm\"><div class=\"blueball\"><\/div><div class=\"orangeball\"><\/div><\/div><\/a>");
+        });
+    });
+    </script>
+    </body>
+</html>
