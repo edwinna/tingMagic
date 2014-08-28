@@ -1,10 +1,10 @@
 <link rel="stylesheet" type="text/css" href="style/main.css">
-<header class="photo-top"> 
+<header class="gallery-top"> 
     <div class="title">收录美好图片</div>
     <div class="red"><img src="images/love.png" width="25" height="25"></div>
 </header>
-  <div class="photolist"></div>
-	<ul class="flex-container">
+  <div class="gallery-list"></div>
+	<ul class="gallery-box">
         		<li class="item"><img src="images/1.jpg" alt="夏天的飞鸟"></li>
         		<li class="item"><img src="images/2.jpg" alt="秋天的黄叶"></li>
         		<li class="item"><img src="images/3.jpg" alt="pt3"></li>
@@ -36,7 +36,7 @@
                 <li class="item"><img src="images/29.jpg" alt="pt24"></li>
                 <li class="item"><img src="images/30.jpg" alt="pt25"></li>
 	</ul>
-<ul class="nav-container">
+<ul class="carousel-box">
 	<a href="#1" data-page="1"></a>
 	<a href="#1" data-page="2"></a>
 	<a href="#1" data-page="3"></a>
@@ -46,10 +46,10 @@
 <script type="text/javascript" src="http://script.suning.cn/javascript/mobileweb/jquery.min.js"></script>
 <script type="text/javascript">
         $(function(){
-      	    var itemlist = $(".flex-container");
+      	    var itemlist = $(".gallery-box");
       	    var capcity = 6;
-      	    var itemContainer = $(".photolist");
-      	    var navigation = $(".nav-container a");
+      	    var itemContainer = $(".gallery-list");
+      	    var navigation = $(".carousel-box a");
       	    var rotations =['flipped-vertical-bottom','flipped-vertical-top','flipped-horizontal-left','flipped-horizontal-right'];
       	    for(var i = 0;i < capcity; i++){
       	    	var itemImg = itemlist.children('li:eq('+i+')').children("img");
