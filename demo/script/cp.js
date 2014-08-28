@@ -2,7 +2,7 @@
  * @Author: luoyuting
  * @Date:   2014-08-24 09:58:31
  * @Last Modified by:   luoyuting
- * @Last Modified time: 2014-08-27 15:38:53
+ * @Last Modified time: 2014-08-28 16:13:51
  */
  (function(b) {
  	   setTimeout(scrollTo, 0 ,0, 0);
@@ -55,7 +55,7 @@
 		touchType = _isPointerType ? e : e.touches[0];
 		var y = parseInt(touchType.clientY) - ops.y;
 		var direction = y > 0 ? 'down' : 'up';
-		if (Math.abs(y) < 80) return false;
+		if (Math.abs(y) < 150) return false;
 		if(current == len - 1) {
             if(direction == 'up') return;
             direction == 'down' && slide(y);
