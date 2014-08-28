@@ -73,37 +73,7 @@
         		</div>
         	</div>
         </div>
-        <script type="text/javascript" src="http://script.suning.cn/javascript/mobileweb/jquery.min.js"></script>
-        <script type="text/javascript">
-        var T = T || {};
-        T.init = function(){
-                var sHeight = $("body").height();
-                var $pageContent= $(".page-content");
-                var $content = $(".page-content .content")
-                $pageContent.css({"min-height":sHeight});
-                $(".deploy-icon").on("click",function(){
-                   $pageContent.toggleClass("active");
-                });
-                
-        },
-        T.handleEvents = function(url){
-            var $pageContent= $(".page-content");
-            var $content = $(".page-content .content")
-            $(".gallery").on('click', function (){
-                $pageContent.toggleClass("active");
-                $.ajax({
-                    url: url,
-                    type: 'get',
-                    success: function(data){
-                       $content.append(data);
-                    }
-                });
-            })
-        }
-        $(function(){
-            T.init();   
-            T.handleEvents('gallery.html');
-        });
-        </script>
+   <!--      <script type="text/javascript" src="http://script.suning.cn/javascript/mobileweb/jquery.min.js"></script> -->
+        <script data-main="scripts/main" src="scripts/lib/require.js"></script>
     </body>
 </html>
