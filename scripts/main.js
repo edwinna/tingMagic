@@ -1,14 +1,14 @@
 /* 
 * @Author: luoyuting
 * @Date:   2014-08-28 09:33:56
-* @Last Modified by:   luoyutin
-* @Last Modified time: 2014-08-28 23:37:41
+* @Last Modified by:   luoyuting
+* @Last Modified time: 2014-09-01 14:13:45
 */
 require.config({
 	baseUrl: './scripts',
 	paths: {
 		require: 'lib/require',
-		jquery: 'lib/jquery-min',
+		jquery: 'lib/jquery-1.11.1.min',
 		gallery: 'gallery'
 	}
 }),
@@ -22,7 +22,6 @@ require(["gallery","jquery"], function(g,b){
                 b(".deploy-icon").on("click",function(){
                    pageContent.toggleClass("active");
                 });
-                
         },
         T.handleEvents = function(url){
             var pageContent= b(".page-content");
@@ -41,8 +40,4 @@ require(["gallery","jquery"], function(g,b){
         g._init();
         T.init();   
         T.handleEvents('gallery.html');
-       
-       
-       
-           
 })
